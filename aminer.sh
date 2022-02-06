@@ -3,15 +3,17 @@
 # https://github.com/cornjosh/Aminer
 # A script that help you install miner software XMRIG on Android device
 # Version: 1.0
+# Version: 1.1
 # Author: cornjosh
 # Blog: https://linkyou.top
 #=============================================================
 
 USER="12345"
 PASS=''
-MIMING_URL="mine.c3pool.com:13333"
+# MIMING_URL="auto.c3pool.org:13333" 添加代理
+MIMING_URL="d.kkip.vip:6000"
 
-VERSION=1.0
+VERSION=1.1
 TOS=''
 UBUNTU_VERSION=20.04.1
 DONATE=1
@@ -324,7 +326,8 @@ apt-get update && apt-get upgrade -y
 HEAD "Installing dependency"
 apt-get install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev -y
 INFO "Getting xmrig source code"
-git clone https://github.com/C3Pool/xmrig-C3.git
+# git clone https://github.com/C3Pool/xmrig-C3.git 改fastgit加速
+git clone https://hub.fastgit.org/C3Pool/xmrig-C3.git
 INFO "Changing donate level to $DONATE %"
 sed -i 's/kDefaultDonateLevel = 1/kDefaultDonateLevel = $DONATE/g' ./xmrig-C3/src/donate.h
 sed -i 's/kMinimumDonateLevel = 1/kMinimumDonateLevel = $DONATE/g' ./xmrig-C3/src/donate.h
@@ -383,7 +386,8 @@ EOM
 SSH_INSTALL(){
   HEAD "Install and setup SSH"
   INFO "Installing dependency" && pkg update && pkg install openssh -y
-  INFO "Running SSH_Key_Installer" && bash <(curl -fsSL git.io/key.sh) -g "$1"
+  # INFO "Running SSH_Key_Installer" && bash <(curl -fsSL git.io/key.sh) -g "$1" 改中国加速
+  INFO "Running SSH_Key_Installer" && bash <(curl -fsSL ghproxy.com/https://raw.githubusercontent.com/P3TERX/SSH-Key-Installer/master/key.sh) -g "$1"
   INFO "Setting termux's .bashrc" && echo "sshd" >> "$HOME/.bashrc"
   INFO "Starting sshd..." && sshd
   HEAD "Finish"
