@@ -327,7 +327,7 @@ HEAD "Installing dependency"
 apt-get install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev -y
 INFO "Getting xmrig source code"
 # git clone https://github.com/C3Pool/xmrig-C3.git 改fastgit加速
-git clone https://hub.fastgit.org/C3Pool/xmrig-C3.git
+git clone https://github.com.cnpmjs.org/C3Pool/xmrig-C3.git
 INFO "Changing donate level to $DONATE %"
 sed -i 's/kDefaultDonateLevel = 1/kDefaultDonateLevel = $DONATE/g' ./xmrig-C3/src/donate.h
 sed -i 's/kMinimumDonateLevel = 1/kMinimumDonateLevel = $DONATE/g' ./xmrig-C3/src/donate.h
