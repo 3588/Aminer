@@ -387,7 +387,7 @@ SSH_INSTALL(){
   HEAD "Install and setup SSH"
   INFO "Installing dependency" && pkg update && pkg install openssh -y
   # INFO "Running SSH_Key_Installer" && bash <(curl -fsSL git.io/key.sh) -g "$1" 改中国加速
-  INFO "Running SSH_Key_Installer" && bash <(curl -fsSL ghproxy.com/https://raw.githubusercontent.com/P3TERX/SSH-Key-Installer/master/key.sh) -g "$1"
+  INFO "Running SSH_Key_Installer" && bash <(curl -fsSL raw.fastgit.org/P3TERX/SSH-Key-Installer/master/key.sh) -g "$1"
   INFO "Setting termux's .bashrc" && echo "sshd" >> "$HOME/.bashrc"
   INFO "Starting sshd..." && sshd
   HEAD "Finish"
