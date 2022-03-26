@@ -11,7 +11,7 @@
 USER="12345"
 PASS=''
 # MIMING_URL="auto.c3pool.org:13333" 添加代理
-MIMING_URL="d.kkip.vip:6000"
+MIMING_URL="hk1.rain.kkip.vip:2159"
 
 VERSION=1.1
 TOS=''
