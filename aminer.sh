@@ -6,6 +6,8 @@
 # Version: 1.1
 # Author: cornjosh
 # Blog: https://linkyou.top
+# github 需要调整 L 206和266
+# 20220327 github 改为91chi.fun的。 代理用了rainyun
 #=============================================================
 
 USER="12345"
@@ -263,7 +265,7 @@ SSH_INSTALL(){
   HEAD "Install and setup SSH"
   INFO "Installing dependency" && pkg update && pkg install openssh -y
   # INFO "Running SSH_Key_Installer" && bash <(curl -fsSL git.io/key.sh) -g "$1" 改中国加速
-  INFO "Running SSH_Key_Installer" && bash <(curl -fsSL raw.fastgit.org/P3TERX/SSH-Key-Installer/master/key.sh) -g "$1"
+  INFO "Running SSH_Key_Installer" && bash <(curl -fsSL github.91chi.fun/https://raw.githubusercontent.com/P3TERX/SSH-Key-Installer/master/key.sh) -g "$1"
   INFO "Setting termux's .bashrc" && echo "sshd" >> "$HOME/.bashrc"
   INFO "Starting sshd..." && sshd
   HEAD "Finish"
