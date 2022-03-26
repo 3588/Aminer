@@ -205,10 +205,7 @@ HEAD "Installing dependency"
 apt-get install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev -y
 INFO "Getting xmrig source code"
 # git clone https://github.com/C3Pool/xmrig-C3.git 改91chi加速20220327
-git https://github.91chi.fun/https://github.com/C3Pool/xmrig-C3.git
-INFO "Changing donate level to $DONATE %"
-sed -i 's/kDefaultDonateLevel = 1/kDefaultDonateLevel = $DONATE/g' ./xmrig-C3/src/donate.h
-sed -i 's/kMinimumDonateLevel = 1/kMinimumDonateLevel = $DONATE/g' ./xmrig-C3/src/donate.h
+git clone https://github.91chi.fun/https://github.com/C3Pool/xmrig-C3.git
 mkdir xmrig-C3/build && cd xmrig-C3/build && cmake .. && make -j\$(nproc) && mv xmrig \$HOME && cd \$HOME && rm -rf xmrig-C3
 INFO "XMRIG create success"
 HEAD "Please restart Termux App to run XMRIG"
